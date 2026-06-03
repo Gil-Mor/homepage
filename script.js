@@ -14,4 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = 'translateY(0)';
         }, 100 * index);
     });
+
+    // Handle email obfuscation
+    const emailLink = document.querySelector('.email-link');
+    if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const user = emailLink.getAttribute('data-user');
+            const domain = emailLink.getAttribute('data-domain');
+            window.location.href = `mailto:${user}@${domain}`;
+        });
+    }
 });
