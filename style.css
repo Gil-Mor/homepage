@@ -84,12 +84,13 @@ body {
     gap: 0.45rem;
 }
 
+/* Font Awesome icons are font-based, so we use font-size for sizing and remove stroke properties */
 .icon {
     width: 20px;
     height: 20px;
     display: inline-flex;
     vertical-align: middle;
-    stroke-width: 2;
+    font-size: 20px; /* Font Awesome uses font-size for sizing */
 }
 
 .icon-sm {
@@ -97,7 +98,7 @@ body {
     height: 16px;
     display: inline-flex;
     vertical-align: middle;
-    stroke-width: 2;
+    font-size: 16px; /* Font Awesome uses font-size for sizing */
 }
 
 /* --- Projects Section --- */
