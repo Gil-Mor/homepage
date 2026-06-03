@@ -15,12 +15,12 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* Dark Mode Tokens */
-        --bg-primary: #000000;
+        --bg-primary: #0f0f0f;
         --bg-card: #121212;
         --text-main: #ffffff;
         --text-muted: #a1a1aa;
-        --accent: #d97706;
-        --accent-hover: #f59e0b;
+        --accent: #ba6300;
+        --accent-hover: #d28500;
         --border-color: #27272a;
         --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
     }
@@ -200,6 +200,10 @@ body {
 .social-links {
     display: flex;
     gap: 1.25rem;
+}
+
+.header-socials {
+    margin-top: 1.25rem;
 }
 
 .social-links a {
