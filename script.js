@@ -1,5 +1,8 @@
 // Minimal engineering touch: A dynamic fade-in entry for project cards
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
     const cards = document.querySelectorAll('.project-card');
 
     cards.forEach((card, index) => {
