@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollTotal = scrollHeight - clientHeight;
 
         // Show fade only if there's significant content below the fold
-        const isScrollable = scrollTotal > 100;
-        const isNearBottom = scrollTop >= scrollTotal - 50;
+        const isScrollable = scrollTotal > 20;
+        const isNearBottom = scrollTop >= scrollTotal - 20;
         scrollFade.style.opacity = (isScrollable && !isNearBottom) ? '1' : '0';
     };
 
