@@ -1,7 +1,11 @@
 // Minimal engineering touch: A dynamic fade-in entry for project cards
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide Icons
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        console.error("Lucide library failed to load. Check your file paths.");
+    }
 
     const cards = document.querySelectorAll('.project-card');
 

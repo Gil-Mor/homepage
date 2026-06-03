@@ -87,12 +87,16 @@ body {
 .icon {
     width: 20px;
     height: 20px;
+    display: inline-flex;
+    vertical-align: middle;
     stroke-width: 2;
 }
 
 .icon-sm {
     width: 16px;
     height: 16px;
+    display: inline-flex;
+    vertical-align: middle;
     stroke-width: 2;
 }
 
