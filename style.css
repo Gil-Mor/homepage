@@ -225,3 +225,17 @@ body {
         text-align: center;
     }
 }
+
+/* --- Scroll Hint --- */
+.scroll-fade {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--bg-primary) 10%, transparent);
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity 0.4s ease;
+    opacity: 0; /* Controlled by JS */
+}

@@ -25,4 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = `mailto:${user}@${domain}`;
         });
     }
+
+    // Smart Scroll Hint: Toggle fade indicator based on scroll position
+    const scrollFade = document.querySelector('.scroll-fade');
+    const updateScrollHint = () => {
+        if (!scrollFade) return;
+        const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+        // Show fade only if there's significant content below the fold
+        const isScrollable = scrollTotal > 100;
+        const isNearBottom = window.scrollY >= scrollTotal - 50;
+        scrollFade.style.opacity = (isScrollable && !isNearBottom) ? '1' : '0';
+    };
+
+    window.addEventListener('scroll', updateScrollHint);
+    window.addEventListener('resize', updateScrollHint);
+    updateScrollHint(); // Initial check
 });
