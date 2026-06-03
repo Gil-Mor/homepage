@@ -1,11 +1,5 @@
 // Minimal engineering touch: A dynamic fade-in entry for project cards
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    } else {
-        console.error("Lucide library failed to load. Check your file paths.");
-    }
 
     const cards = document.querySelectorAll('.project-card');
 
@@ -37,14 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollFade = document.querySelector('.scroll-fade');
     const updateScrollHint = () => {
         if (!scrollFade) return;
-        const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = window.innerHeight;
+        const scrollTotal = scrollHeight - clientHeight;
+
         // Show fade only if there's significant content below the fold
         const isScrollable = scrollTotal > 100;
-        const isNearBottom = window.scrollY >= scrollTotal - 50;
+        const isNearBottom = scrollTop >= scrollTotal - 50;
         scrollFade.style.opacity = (isScrollable && !isNearBottom) ? '1' : '0';
     };
 
-    window.addEventListener('scroll', updateScrollHint);
-    window.addEventListener('resize', updateScrollHint);
+    ['scroll', 'resize', 'load'].forEach(evt => window.addEventListener(evt, updateScrollHint));
     updateScrollHint(); // Initial check
 });
