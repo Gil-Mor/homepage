@@ -241,6 +241,15 @@ body {
         gap: 1rem;
         text-align: center;
     }
+    .projects-grid {
+        gap: 1.25rem;
+    }
+    .project-card {
+        padding: 1.5rem;
+    }
+    .section-title {
+        margin-bottom: 1.5rem;
+    }
 }
 
 /* --- Scroll Hint --- */
