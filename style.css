@@ -123,7 +123,7 @@ body {
 /* --- Project Cards --- */
 .project-card {
     background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: var(--card-shadow);
@@ -269,7 +269,7 @@ body {
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to top, var(--bg-primary) 10%, transparent);
+    background: linear-gradient(to top, var(--bg-primary) 25%, transparent);
     pointer-events: none;
     z-index: 100;
     transition: opacity 0.4s ease;
