@@ -18,18 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme Toggle Logic
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    const currentTheme = localStorage.getItem('theme');
 
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    } else {
-        // Auto-sync toggle state with system preference initially
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            toggleSwitch.checked = true;
-        }
+    // Sync toggle state with the attribute set in index.html (or system preference)
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark' ||
+                      (!document.documentElement.hasAttribute('data-theme') &&
+                       !window.matchMedia('(prefers-color-scheme: light)').matches);
+
+    if (isDarkMode) {
+        toggleSwitch.checked = true;
     }
 
     toggleSwitch.addEventListener('change', (e) => {
